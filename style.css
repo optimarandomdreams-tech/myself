@@ -108,7 +108,8 @@ a { color: var(--accent); text-underline-offset: 3px; }
 
 /* ---------- Hero ---------- */
 
-.hero { padding: clamp(44px, 7vw, 84px) 0 0; }
+/* padding-top only — the horizontal padding comes from .wrap and must survive */
+.hero { padding-top: clamp(44px, 7vw, 84px); }
 
 .hero-inner {
   display: grid; grid-template-columns: auto 1fr; gap: clamp(24px, 4vw, 44px);
@@ -174,7 +175,7 @@ a { color: var(--accent); text-underline-offset: 3px; }
 .layout {
   display: grid; grid-template-columns: minmax(0, 1fr) 300px;
   gap: clamp(28px, 5vw, 56px);
-  padding: clamp(40px, 6vw, 72px) 0 0;
+  padding-top: clamp(40px, 6vw, 72px);
   align-items: start;
 }
 
@@ -330,6 +331,8 @@ section { margin-bottom: clamp(36px, 5vw, 52px); scroll-margin-top: 76px; }
   .hero-inner { grid-template-columns: 1fr; text-align: left; }
   .monogram { box-shadow: 0 0 0 1px var(--rule), 0 0 0 5px var(--paper), 0 0 0 6px var(--brass); }
   .stats { grid-template-columns: 1fr 1fr; }
+  /* 3 tiles in 2 columns leaves a hollow cell — let the last one span the row */
+  .stats .stat:last-child { grid-column: 1 / -1; }
 }
 
 /* ---------- Print → clean PDF résumé ---------- */
@@ -347,9 +350,12 @@ section { margin-bottom: clamp(36px, 5vw, 52px); scroll-margin-top: 76px; }
 
   .site-nav, .hero-actions, .ad-slot, .site-footer .btn { display: none !important; }
 
-  .hero { padding: 0; }
+  /* @page supplies the margins, so the container padding comes off */
+  .wrap { padding-left: 0; padding-right: 0; }
+  .hero { padding-top: 0; }
   .hero h1 { font-size: 24pt; }
-  .monogram { box-shadow: none; border: 1px solid #999; }
+  /* outline, not a solid ink blob */
+  .monogram { box-shadow: none; border: 1px solid #999; background: #fff; color: #000; }
 
   .layout { display: block; padding-top: 18px; }
   .aside-inner { position: static; display: block; }
