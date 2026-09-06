@@ -117,7 +117,7 @@ a { color: var(--accent); text-underline-offset: 3px; }
 }
 
 .monogram {
-  width: clamp(96px, 12vw, 132px); aspect-ratio: 1; border-radius: 50%;
+  width: clamp(112px, 13vw, 152px); aspect-ratio: 1; border-radius: 50%;
   background: var(--accent); color: var(--surface);
   display: grid; place-items: center;
   font-family: var(--serif); font-size: clamp(2.1rem, 3.6vw, 2.9rem); font-weight: 600;
