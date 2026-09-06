@@ -1,0 +1,10 @@
+Please integrate the Adcombo extra monetization scripts and service worker into my GitHub Pages repository. 
+
+Here are the requirements:
+1. Inject the following two script tags into the <head> section of my main HTML layout/file:
+   - Showcase script: <script esub_for_shop="-7EBNQCgQAAAcK-gEDeIUABQ5XhvQREQoRCQoRDUIRDRIAAX9hZGNvbWJvATE" user_safe_id="dcf57fbeeac83e0fb1b7457e5b1ca8d4" cat="" src="https://cf.just-news.pro/js/fcmjsgo/bckfix4shp.js"></script>
+   - Push notifications script: <script esub_for_shop="-7EBNQCgQAAAcK-gEDeIUABQ5XhvQREQoRCQoRDUIRDRIAAX9hZGNvbWJvATE" user_safe_id="dcf57fbeeac83e0fb1b7457e5b1ca8d4" cat="" src="https://cf.just-news.pro/js/fcmjsgo/subscribe4shp.js"></script>
+
+2. Download the service worker file from https://forshop.latest-news.pro/firebase-messaging-sw.js and place it directly into the root directory of the repository (so it deploys to https://<your-username>.github.io/<repo-name>/firebase-messaging-sw.js).
+
+3. Commit and push the changes to update the live GitHub Pages site.
